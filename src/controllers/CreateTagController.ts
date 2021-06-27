@@ -7,9 +7,9 @@ class CreateTagController {
     const { name } = req.body;
     const createTagService = new CreateTagService();
 
-    const tag = createTagService.execute(name);
+    const tag = await createTagService.execute(name);
 
-    return response.json(tag);
+    return res.json(tag);
   }
 }
 
